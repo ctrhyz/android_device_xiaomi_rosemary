@@ -12,7 +12,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/rosemary/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+
+INFINITY_BUILD_TYPE := UNOFFICIAL
+INFINITY_MAINTAINER := "ZxhCarkecor | ctrhyz"
+TARGET_SUPPORTS_BLUR := true
+TARGET_HAS_UDFPS := false
+WITH_GAPPS := false
+TARGET_BUILD_GOOGLE_TELEPHONY := false
+TARGET_SUPPORTS_TOUCHGESTURES := false
+TARGET_BUILD_VIMUSIC := false
+USE_MOTO_CALCULATOR := true
 
 PRODUCT_NAME := lineage_rosemary
 PRODUCT_DEVICE := rosemary
@@ -23,6 +33,7 @@ PRODUCT_MODEL := M2101K7BNY
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="rosemary-user 12 SP1A.210812.016 V14.0.7.0.TKLMIXM release-keys"
+    PRIVATE_BUILD_DESC="rosemary-user 12 SP1A.210812.016 V14.0.7.0.TKLMIXM release-keys" \
+    INFINITY_MAINTAINER="ZxhCarkecor | ctrhyz"
 
 BUILD_FINGERPRINT := Redmi/rosemary_global/rosemary:12/SP1A.210812.016/V14.0.7.0.TKLMIXM:user/release-keys
